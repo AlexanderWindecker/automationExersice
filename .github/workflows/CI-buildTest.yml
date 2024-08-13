@@ -19,7 +19,7 @@ jobs:
             - name: Install Node
               uses: actions/setup-node@v3
               with:
-                node-version: '20.11.0'
+                node-version: '14.17.0'
 
             - name: Install independence
               run: |
@@ -34,10 +34,10 @@ jobs:
                     npm run file cypress/e2e/TC1-RegisterUser.cy.js
                 record: false
 
-              # env: 
-              #  CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+              env: 
+               CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
-              #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Generate XML Regression Report
               if: always()

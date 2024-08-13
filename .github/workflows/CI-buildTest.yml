@@ -1,0 +1,51 @@
+name: Regresion Test Execution
+    
+run-name: CI Run Pipeline
+    
+on:
+    push:
+        branches:
+            - main
+            - QA
+
+jobs:
+    Cypress-Regresion:
+        runs-on: windows-latest
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
+            - name: Install Node
+              uses: actions/setup-node@v3
+              with:
+                node-version: '20.11.0'
+
+            - name: Install independence
+              run: |
+               npm install 
+               npm list
+
+            - name: Regresion test chrome
+              uses: cypress-io/github-actions@v4
+              with: 
+                browser: chrome
+                command: |
+                    npm run file cypress/e2e/TC1-RegisterUser.cy.js
+                record: false
+
+              # env: 
+              #  CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+
+              #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Generate XML Regression Report
+              if: always()
+              run: |
+                npm run report.xml
+
+
+              
+
+
+

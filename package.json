@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "cy:open": "cypress open"  
+    "cy:open": "cypress open",
+    "regresion": "cypress run --browser chrome cypress/e2e/TC1-RegisterUser.cy.js"  
   },
   "keywords": [
     "E2E",

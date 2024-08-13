@@ -23,15 +23,15 @@ jobs:
 
             - name: Install All Dependencies
               run: |
-               npm install 
-               npm list
+               npm install -g yarn 
+               yarn install
 
             - name: Regresion test chrome
               uses: cypress-io/github-action@v4
               with: 
                 browser: chrome
                 command: |
-                    npm run file cypress/e2e/TC1-RegisterUser.cy.js
+                    yarn run file cypress/e2e/TC1-RegisterUser.cy.js
                 record: false
 
               env: 
@@ -42,7 +42,7 @@ jobs:
             - name: Generate XML Regression Report
               if: always()
               run: |
-                npm run report.xml
+                yarn run report.xml
 
 
               

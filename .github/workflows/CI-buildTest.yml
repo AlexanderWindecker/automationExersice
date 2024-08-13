@@ -19,7 +19,7 @@ jobs:
             - name: Install Node
               uses: actions/setup-node@v3
               with:
-                node-version: '14.17.0'
+                node-version: '20.x'
 
             - name: Install All Dependencies
               run: |
@@ -39,10 +39,10 @@ jobs:
 
                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Generate XML Regression Report
-              if: always()
-              run: |
-                yarn run report.xml
+            # - name: Generate XML Regression Report
+            #   if: always()
+            #   run: |
+            #     yarn run report.xml
 
 
               

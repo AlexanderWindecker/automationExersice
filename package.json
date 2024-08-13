@@ -6,6 +6,7 @@
   "scripts": {
     "test": "test",
     "cy:open": "cypress open",
+    "file":"cypress run --browser chrome --reporter --spec",
     "regresion": "cypress run --browser chrome cypress/e2e/TC1-RegisterUser.cy.js"  
   },
   "keywords": [

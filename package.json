@@ -6,8 +6,8 @@
   "scripts": {
     "test": "test",
     "cy:open": "cypress open",
-    "file":"cypress run --browser chrome --reporter --spec",
-    "regresion": "cypress run --browser chrome cypress/e2e/TC1-RegisterUser.cy.js"  
+    "file": "cypress run --browser chrome --reporter --spec",
+    "regresion": "cypress run --browser chrome cypress/e2e/TC1-RegisterUser.cy.js"
   },
   "keywords": [
     "E2E",
@@ -18,5 +18,8 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "^13.13.2"
+  },
+  "dependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2"
   }
 }

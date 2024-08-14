@@ -21,7 +21,7 @@ it('Test Case 1: Register User', () => {
   formPage.typePassword().type('123456')
   formPage.selectDays().select(10)
   formPage.selectMonths().select(2)
-  formPage.selectYears().select(1988)
+  formPage.selectYears().select('1988')
   formPage.selectNewsletter().click()
   formPage.selectOptin().click()
   formPage.firstNameInput().type('alexander')

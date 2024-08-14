@@ -1,6 +1,6 @@
 name: Regresion Test Execution
     
-run-name: CI Run Pipeline
+run-name: ${{ github.actor}} triggered SanityTest by ${{ github.ref.name}}
     
 on:
     push:
@@ -9,42 +9,27 @@ on:
             - QA
 
 jobs:
-    Cypress-Regresion:
-        runs-on: windows-latest
+    Cypress-Sanity:
+        runs-on: ubuntu-latest
 
         steps:
             - name: Checkout
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
+              
+            - name: Install All Dependencies
+              run:  npm ci
 
             - name: Install Node
               uses: actions/setup-node@v3
               with:
-                node-version: '20.x'
+                node-version: 20
 
-            - name: Install All Dependencies
-              run: |
-               npm install -g yarn 
-               yarn install
-               yarn run cypress install
            
 
             - name: Run Test chrome
-              uses: cypress-io/github-action@v4
-              with: 
-                browser: chrome
-                command: |
-                    yarn run file cypress/e2e/TC1-RegisterUser.cy.js
-                record: false
+              run: npm run test:ci
+                
 
-              env: 
-               CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-
-               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-            # - name: Generate XML Regression Report
-            #   if: always()
-            #   run: |
-            #     yarn run report.xml
 
 
               

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
+    "test:ci": "cypress run",
     "cy:open": "cypress open",
+    "test:chrome": "cypress run --browser chrome --reporter cypress-multi-reporters --reporter-options configFile=cypress.reporter.chrome.json --spec",
     "file": "cypress run --browser chrome --reporter --spec",
     "regresion": "cypress run --browser chrome cypress/e2e/TC1-RegisterUser.cy.js"
   },
@@ -20,6 +22,7 @@
     "cypress": "^13.13.2"
   },
   "dependencies": {
-    "cypress-mochawesome-reporter": "^3.8.2"
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "express": "^4.19.2"
   }
 }

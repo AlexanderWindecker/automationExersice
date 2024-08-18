@@ -33,7 +33,7 @@ on:
       test_run:
         description: 🚀Select the Test Suite to Run
         required: true
-        default: 'cypress/e2e/Tests/Elements' #! No modificar, esto es solo un ejemplo.
+        default: 'cypress/e2e/Tests/' #! No modificar, esto es solo un ejemplo.
         type: string
         
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel

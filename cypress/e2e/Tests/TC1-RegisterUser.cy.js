@@ -1,4 +1,4 @@
-import { formPage } from "../support/page/TC1-RegisterUser.Page";
+import { formPage } from "../../support/page/TC1-RegisterUser.Page";
 
 describe('template spec', () => {
 

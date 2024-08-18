@@ -24,8 +24,6 @@ jobs:
               with:
                 node-version: 20
 
-           
-
             - name: Run Test chrome
               run: npm run test:ci
                 

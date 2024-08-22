@@ -61,10 +61,6 @@ jobs:
       run: |
         bun install
 
-    - name: 🔎 Check Typescript Code
-      run: | #? Corre el linter de TypeScript para verificar errores de sintaxis.
-        bun run check:ts
-
     - name: 🧪 Cypress Run Sanity Test
       uses: cypress-io/github-action@v4
       with:

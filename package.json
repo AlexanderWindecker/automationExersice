@@ -8,8 +8,18 @@
     "test:ci": "cypress run",
     "cy:open": "cypress open",
     "test:chrome": "cypress run --browser chrome --reporter cypress-multi-reporters --reporter-options configFile=cypress.reporter.chrome.json --spec",
-    "file": "cypress run --browser chrome --reporter --spec",
-    "regresion": "cypress run --browser chrome cypress/e2e/TC1-RegisterUser.cy.js"
+    "test:sanity:ci": "cypress run --browser chrome --reporter cypress-multi-reporters --reporter-options configFile=cypress.reporter.chrome.json --spec",
+    "test:firefox": "cypress run --browser firefox --reporter cypress-multi-reporters --reporter-options configFile=cypress.reporter.firefox.json --spec",
+    "test:edge": "cypress run --browser edge --reporter cypress-multi-reporters --reporter-options configFile=cypress.reporter.edge.json --spec",
+    "regression": "npm run clean:reports && cypress run --browser electron",
+    "regression:chrome": "npm run clean:reports && cypress run --browser chrome --reporter cypress-multi-reporters --reporter-options configFile=cypress.reporter.chrome.json",
+    "junit:rm:report": "rm -rf cypress/tests_results/junit/* || true",
+    "mocha:rm:report": "rm -rf cypress/tests_results/mocha/* || true",
+    "clean:reports": "npm run junit:rm:report && npm run mocha:rm:report",
+    "merge:junit:c:report": "jrm cypress/tests_results/junit/chrome_junit_report.xml \"cypress/tests_results/junit/chrome/*.xml\"",
+    "merge:json:c:report": "mochawesome-merge \"cypress/tests_results/mocha/chrome/*.json\" > \"cypress/tests_results/index.json\"",
+    "gen:mocha:c:report": "marge cypress/tests_results/index.json -o cypress/tests_reports/chrome_mocha_report",
+    "chrome:report": "npm run merge:junit:c:report && npm run merge:json:c:report && npm run gen:mocha:c:report"
   },
   "keywords": [
     "E2E",

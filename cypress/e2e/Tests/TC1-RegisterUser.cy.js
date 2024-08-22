@@ -42,6 +42,7 @@ it('Test Case 1: Register User', () => {
   formPage.validateAccountDeleted().should('be.visible').and('have.text', 'Account Deleted!')
   cy.wait(500)
   formPage.buttonContinue().click()
+  
 
   
   

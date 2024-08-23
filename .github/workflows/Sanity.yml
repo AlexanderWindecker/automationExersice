@@ -35,7 +35,6 @@ on:
         required: true
         default: 'cypress/e2e/Tests/' #! No modificar, esto es solo un ejemplo.
         type: string
-        
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
  SanityTest:

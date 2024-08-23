@@ -474,6 +474,14 @@ cypress-mochawesome-reporter@^3.8.2:
     mochawesome-merge "^4.2.1"
     mochawesome-report-generator "^6.2.0"
 
+cypress-multi-reporters@^1.6.4:
+  version "1.6.4"
+  resolved "https://registry.npmjs.org/cypress-multi-reporters/-/cypress-multi-reporters-1.6.4.tgz"
+  integrity sha512-3xU2t6pZjZy/ORHaCvci5OT1DAboS4UuMMM8NBAizeb2C9qmHt+cgAjXgurazkwkPRdO7ccK39M5ZaPCju0r6A==
+  dependencies:
+    debug "^4.3.4"
+    lodash "^4.17.21"
+
 cypress@^13.13.2, cypress@>=6.2.0:
   version "13.13.2"
   resolved "https://registry.npmjs.org/cypress/-/cypress-13.13.2.tgz"
@@ -1361,7 +1369,7 @@ minimist@^1.2.8:
   resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.8.tgz"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
-mocha@>=7:
+mocha@>=3.1.2, mocha@>=7:
   version "10.7.3"
   resolved "https://registry.npmjs.org/mocha/-/mocha-10.7.3.tgz"
   integrity sha512-uQWxAu44wwiACGqjbPYmjo7Lg8sFrS3dQe7PP2FQI+woptP4vZXSMcfMyFL/e1yFEeEpV4RtyTpZROOKmxis+A==

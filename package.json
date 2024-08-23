@@ -29,7 +29,8 @@
   "author": "alexander Windecker",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.13.2"
+    "cypress": "^13.13.2",
+    "cypress-multi-reporters": "^1.6.4"
   },
   "dependencies": {
     "cypress-mochawesome-reporter": "^3.8.2",

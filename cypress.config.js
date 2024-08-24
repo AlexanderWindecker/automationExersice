@@ -1,6 +1,6 @@
 const { defineConfig } = require("cypress");
 
-export default defineConfig({
+module.exports = defineConfig({
   pageLoadTimeout: 20000,
   viewportWidth: 1920,
 	viewportHeight: 1080,
@@ -9,7 +9,7 @@ export default defineConfig({
 	screenshotsFolder: 'cypress/screenshots',
 	screenshotOnRunFailure: true,
 	scrollBehavior: 'center',
-  
+
   reporter: "cypress-multi-reporters",
   reporterOptions: {
     configFile: "cypress.reporter.chrome.json",

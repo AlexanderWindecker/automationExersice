@@ -72,22 +72,10 @@ jobs:
       run: |
         bun run chrome:report
 
-    - name: 📊 Upload Artifact Mochawesome Report
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: sanity-mocha-report
-        path: ${{ env.MOCHA_REPORT_DIR }}
-        retention-days: 15
-
-    #* --------------- Mochawesome Report Build and Deploy ---------------
-    - name: 🚀 Deploy Mocha Report to GitHub Pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages #? the branch used for the GitHub Pages content.
-        destination_dir: sanity #? this is the directory inside the gh-pages branch where the MOCHA_REPORT_DIR will be saved.
-        publish_dir: ${{ env.MOCHA_REPORT_DIR }} #? the directory to be published.
-        keep_files: true #? true is required to work properly with the subfolder option in the Build Allure Report step.
-        #* -----------------------------------------
+    # - name: 📊 Upload Artifact Mochawesome Report
+    #   if: always()
+    #   uses: actions/upload-artifact@v4
+    #   with:
+    #     name: sanity-mocha-report
+    #     path: ${{ env.MOCHA_REPORT_DIR }}
+    #     retention-days: 15

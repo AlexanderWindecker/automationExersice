@@ -72,10 +72,10 @@ jobs:
       run: |
         bun run chrome:report
 
-    # - name: 📊 Upload Artifact Mochawesome Report
-    #   if: always()
-    #   uses: actions/upload-artifact@v4
-    #   with:
-    #     name: sanity-mocha-report
-    #     path: ${{ env.MOCHA_REPORT_DIR }}
-    #     retention-days: 15
+    - name: 📊 Upload Artifact Mochawesome Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: sanity-mocha-report
+        path: .cypress/
+        retention-days: 15

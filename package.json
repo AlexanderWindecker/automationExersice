@@ -7,6 +7,7 @@
     "test": "test",
     "test:ci": "cypress run",
     "cy:open": "cypress open",
+    "test:run": "cypress run --browser electron --spec",
     "test:chrome": "cypress run --browser chrome --reporter cypress-multi-reporters --reporter-options configFile=cypress.reporter.chrome.json --spec",
     "test:sanity:ci": "cypress run --browser chrome --reporter cypress-multi-reporters --reporter-options configFile=cypress.reporter.chrome.json --spec",
     "test:firefox": "cypress run --browser firefox --reporter cypress-multi-reporters --reporter-options configFile=cypress.reporter.firefox.json --spec",

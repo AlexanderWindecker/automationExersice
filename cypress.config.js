@@ -15,13 +15,14 @@ module.exports = defineConfig({
     configFile: "cypress.reporter.chrome.json",
   },
 
-  reporter: "cypress-mochawesome-reporter",
+  // reporter: "cypress-mochawesome-reporter",
+  
   e2e: {
     baseUrl: "http://automationexercise.com",
     specPattern: ["cypress/e2e/**/*.cy.{js,jsx,ts,tsx}"],
     excludeSpecPattern: ["cypress/e2e/**/*.example.cy.js"],
     setupNodeEvents(on, config) {
-      require("cypress-mochawesome-reporter/plugin")(on);
+      // require("cypress-mochawesome-reporter/plugin")(on);
     },
   },
 });

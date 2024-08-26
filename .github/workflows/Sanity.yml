@@ -77,5 +77,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: sanity-mocha-report
-        path: .cypress/
+        path: ${{ env.MOCHA_REPORT_DIR }}
         retention-days: 15
